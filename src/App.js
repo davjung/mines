@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { random } from "mathjs";
 
 function App() {
+  const [mines, setMines] = useState();
+
+  class cell {
+    constructor(status) {
+      this.activated = false;
+      this.count = 0;
+      this.isMine = status;
+    }
+  }
+  // console.log(random(0, 2));
+  const getMineCoords = (height, width, numMines) => {
+    let mineCoords = [];
+    for (let i = 0; i < numMines; i += 1) {
+      do {
+        // let mineH = random(0, height);
+        // console.log("works", mineH);
+      } while (true);
+    }
+  };
+
+  const startGame = () => {
+    console.log("click");
+    getMineCoords(10, 10, 10);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <MineBoard></MineBoard> */}
+      <button onClick={startGame()}>Start</button>
     </div>
   );
 }
 
 export default App;
+
+// const cell = styled.div``;
